@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        body div{
+            background-color: skyblue;  /*> 없이 하면 body 아래의 모든 div 자손에게 적용*/
+            margin: 10px;
+        }
+        body>div{background-color: pink;} /*body 바로 밑의 자식에는 >가 필수*/
+    
+        h1{color: aqua;}
+        .test1{background-color: green ;}
+        #test2{background-color: red;}
+    </style>
+</head>
+<body>
+    <h1>logo</h1>
+    <h2>title</h2>
+    <address>test</address>
+    <p>Lorem ipsum dolor sit.</p>
+    <hr />
+    <div>
+        <div>Lorem, ipsum.</div>
+        <div>Architecto, at?</div>
+        <div>Totam, nobis.</div>
+    </div>
+
+    <ul>
+        <li><a href="#">menu1</a>
+            <ul class="submenu">
+                <li><a href="#">sub1</a></li>
+                <li><a href="#">sub1</a></li>
+                <li><a href="#">sub1</a></li>
+                <li><a href="#">sub1</a></li>
+                <li><a href="#">sub1</a></li>
+            </ul>
+        </li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+    </ul>
+
+    <a href="#">test</a>
+    <a href="#">test</a>
+    <img src="https://s.pstatic.net/shopping.phinf/20240801_22/398a4625-c05e-49b3-a979-4ac709f597ab.jpg?type=f294_378" alt="">
+    <span>test</span>
+    <div style="width: 100px;">
+        <div>test</div>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.<span style="color: red;"> Commodi ut, alias dolores ducimus dolorem animi a illo voluptates odit molestias sed nostrum quos! </span>Laudantium velit autem possimus saepe, optio assumenda.</p>
+    </div>
+
+    
+    css 우선순위
+    * < tag(1점) < class(10) < id(100) < inline style
+    <h1 class="test1">test</h1> (tag + class = 11점)
+    <h1 id="test2" style="background-color: blue;">test2</h1>(tag + id = 101점) <!--head에 있는 style이 아닌 inline 우선순위가 높아 적용된다-->
+    <p></p>
+
+    <script></script> <!--script는 body 아래 쪽에 둔다고 생각한다. 여기서 style을 변경하면 inline으로 적용된다.-->
+</body>
+</html>
+
+
