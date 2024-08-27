@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="alert('test')">클릭</button>
+    <script>
+        document.write("test");
+        console.log("hello")
+
+        var day;
+        var week = new Date().getDay();
+        console.log(week)
+
+        switch(week){
+            case 0:
+                day = "일요일";
+                break;
+            case 2:
+                day = "화요일";
+                break;
+        }
+        //document.write("오늘은 " + day + "입니다.")
+        document.write(`오늘은 ${day}입니다.<br>`)
+
+        var city = ['서울', '부산', '대구']
+
+        function printA(){
+            for(var i=0; i<city.length; i++){
+                document.write(`배열데이터 ${city[i]}<br>`)
+            }
+        }
+
+        printA();   //주의 : js에서 만든 함수 꼭 script 태그 안에서 사용
+
+        
+        function printArr(item, i){
+            document.write("배열데이터 [" + i +"] : " + item + "<br>")
+        }
+        city.forEach(printArr);
+        city.forEach(function(item, i){
+            document.write("배열데이터 [" + i +"] : " + item + "<br>")
+        })
+
+        var data = [1,2,3,4,5,6,7,8,9];
+        function mapArray(value){
+            return value*value;
+        }
+        var mapData = data.map(mapArray);
+        document.write(mapData);
+    </script>
+
+
+<p id="var1"></p>
+<p id="var2" class="var2"></p>
+<p id="var3"></p>
+
+<script>
+    var car ={
+        name: 'sonata',
+        speed: 100,
+        color: 'white'
+    }
+    // id는 유일하지만 클래스는 복수형이 가능해서 몇번째인지 작성해야 한다.
+    document.getElementById('var1').innerHTML = car.name;
+    $("#var").html(car.name) //jQuery
+    document.getElementsByClassName('var2')[0].innerHTML = car.speed;
+</script>
+
+<style>
+    .box{width: 100px; height: 100px; background-color: skyblue; transition: 0.3s;}
+</style>
+
+<div class="box"></div>
+<button onClick="boxChange()">클릭 </button>
+<script>
+    function boxChange(){ // style 속성 바꿀때 "" 안에 넣기. 없애려면 크기 또는 visibility 조절
+        document.getElementsByClassName("box")[0].style.backgroundColor =  "red";
+        document.getElementsByClassName("box")[0].style.width = "2000px";
+    }
+</script>
+
+</body>
+</html>
