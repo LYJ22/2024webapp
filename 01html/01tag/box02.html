@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* padding을 하면 div 사이즈가 커진다. 박스 사이징 -> 외부로 변화X, 안쪽으로 패딩값이 적용된다. */
+        *{margin: 0;padding: 0; box-sizing: border-box;}
+        .box01{
+            background-color: skyblue;
+            width: 100px; height: 100px;
+            padding: 10px;
+            /* border: 10px solid rgb(0, 0, 0); */
+        }
+        .box{
+            background-color: pink;
+            width: 100px;height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box01">
+        text
+    </div>
+    <div class="box">
+        box
+    </div>
+</body>
+</html>
