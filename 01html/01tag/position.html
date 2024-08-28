@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        html,body{
+            height: 100%;
+        }
+        body{
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .boxWrap{
+            width: 400px; height: 400px;
+            background-color: skyblue;
+            position: relative;
+            /* overflow: hidden; */
+        }
+        .boxWrap div{
+            width: 100px; height: 100px;
+        }
+        /* 부모에 pos값 없으면 pos값이 있는 조상/body를 기준으로 바뀐다. */
+        /* pos 값이 있어야 가둘 수 있다. */
+        .boxWrap .box1{
+            background: black;
+            /* position: absolute;
+            right: -50px; */
+            position: absolute;
+            top: 50px; left: 50px;
+        }
+        /* relative는 right가 안된다. top,left만 쓴다고 봄 */
+        /* rel - rel을 쓰지 않는다. */
+        /* 부모에 pos를 주고 자식을 absol로 자유롭게 배치하는 편 */
+        .boxWrap .box2{
+            background-color: red;
+            position: relative;
+            /* 뒤에 만들어진 태그 레이어가 위에 있다 */
+            z-index: 2;
+        }
+        .boxWrap .box3{
+            background-color: blue;
+            position: relative;
+            top: 10px; left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxWrap">
+        <div class="box1">
+
+        </div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>

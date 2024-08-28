@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 변수 : let, const
+    함수 : arrow function
+    배열 : spread operator
+    반복문 : for of / map
+    class
+    promise 동기, 비동기, async await
+    module -->
+
+    <script>
+        var test = 1;   // 아무데서 초기화가 일어난다
+        var test = 2;   // test의 값 : 2
+
+        let han = 1;
+        // let han = 2  error 발생
+        han = 10;
+        console.log(han);
+
+        const han1 = 100;
+        // han1 = 1000; 결과 출력시 error 발생
+        console.log(han1);
+
+        const obj = (x,y) => x*y
+        console.log(obj(10,20));
+
+        const a = [1,2,3]
+        const b = [...a] // b = a로 하면 b값을 변경하면 a도 변경되어 버린다. deep copy 필요
+        b[0] = 10
+        console.log("b: " + b)
+        console.log("a: "+ a)
+
+        for(const item of a){ console.log(item) }
+        console.log("forEach의 경우")
+        a.forEach(item => console.log(item));
+        console.log("map의 경우")
+        a.map(item => console.log(item))
+
+    </script>
+</body>
+</html>
