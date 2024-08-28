@@ -140,8 +140,8 @@ body{
 /* content1 css */
 .content{
     width: 1280px;
+    padding: 180px 32px;
     margin: 0 auto;
-    margin-bottom: 3em;
 }
 .con1 .contxt{
     font-size: 44px;
