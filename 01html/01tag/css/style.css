@@ -4,6 +4,7 @@
 body{
     height: 400vh;
     font-family: "Noto Sans KR", sans-serif;
+    letter-spacing: -.6px;
 }
 
 .container{
@@ -168,15 +169,19 @@ body{
 }
 
 .banner .card .cardText{
-    padding: 0 20px;
+    padding: 20px 16px 0;
 }
 .banner .card .cardText h3{
     margin-bottom: 10px;
 }
-
-.banner .card .imgWrap{
-    
+.banner .card .cardText p{
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 7px;
+    letter-spacing: -.6px;
 }
+
+
 .banner .card .imgWrap:hover img{
     transition: 0.3s;
     /* transform: translate(0,0) scale(1.1) rotate(10deg); */
@@ -188,6 +193,7 @@ body{
     position: relative;
     height: 462px;
     margin-top: 160px;
+    margin-bottom: 160px;
 }
 
 .sec1st .textWrap{
