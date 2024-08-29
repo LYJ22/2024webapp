@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+/* 테마 : 여기서 변경하는 걸로 사이트 전체 변환 가능 */
+:root{
+    --primary-color-0:#aaa;
+    --primary-color-1:#0000ff;
+    --primary-color-2:#efefef;
+    --textshadow-1: 0 10px 10px rgba(0,0,0,0.3);
+    --shadow-1:rgba(0,0,0,0.2);
+}
+
+.testWrap{
+    background-color: var(--primary-color-1);
+    box-shadow: 0 10px 10px var(--shadow-1);
+}
+
+.visualWrap{
+    background: url(../images/slider-bg.svg) no-repeat center;
+    background-size: cover;
+}
+
+.shadow{
+    box-shadow: 0 0 10px var(--shadow-1) !important;
+}
+
+.btnShadow{
+    box-shadow: 0 5px 10px var(--shadow-1) !important;
+}
+
+/* service */
+.service .card{
+    background-color: var(--primary-color-2);
+    border: 0 none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.service .card:hover{
+    transform: scale(1.1) translate(-20px, -20px);
+    box-shadow: 10px 10px 15px var(--shadow-1);
+}
+.service .card img{
+    height: 200px;
+}
+
+.conTitle{
+    position: relative;
+    /* width: 300px; */
+    display: inline-block;
+    left: 50%;
+    /* margin-left: -150px; */
+    transform: translateX(-50%);
+}
+.conTitle::after{
+    content: '';
+    display: block;
+    /* width: 100px;height: 3px;
+    background-color: var(--primary-color-0);
+    margin: 10px auto; */
+
+    width: 10px;height: 10px;
+    background-color: var(--primary-color-0);
+    border-radius: 50%;
+    position: absolute;
+    left: -15px; top: -5px;
+}
+
+/* 
+가운데 정렬법
+1. margin 0 auto
+2. flex: df justify-content center, align-items center
+3. pos left50% top50%
+    (길이를 아는 경우 -> width 100 / margin-left -50px)
+4. pos left50% top50%
+    (크기를 모름 -> transform:translate(-50%,-50%) )
+
+*/
+
+
+/* customer */
+.customer .item{
+    background-color: skyblue;
+}

@@ -131,46 +131,62 @@
             </div>
         </div>
         <div class="buttonWrap">
-            <button>공지사항</button>
-            <button>뉴스룸</button>
-            <button>소셜미디어</button>
+            <div class="button"><a href="#">공지사항</a></div>
+            <div class="button"><a href="#">뉴스룸</a></div>
+            <div class="button"><a href="#">소셜미디어</a></div>
         </div>
-        <div class="swiper">
+        <div class="swiper2">
             <ul class="swiper-wrapper">
                 <li class="swiper-slide st1">
                     <div class="txtbox">
-                        <p class="title">게임소통학교</p>
-                        <span class="subtxt">게임으로 소통하고 게임으로 가까워지는 가족</span>
+                        new1
                     </div>
                 </li>
                 <li class="swiper-slide st2">
                     <div class="txtbox">
-                        <p class="title">전국 장애학생 e페스티벌</p>
-                        <span class="subtxt">게임 안에서 하나 되는 모두의 축제</span>
+                        new2
                     </div>
                 </li>
                 <li class="swiper-slide st3">
                     <div class="txtbox">
-                        <p class="title">견학프로그램</p>
-                        <span class="subtxt">나의 게임 산업 탐방기</span>
+                        new3
                     </div>
                 </li>
                 <li class="swiper-slide st4">
                     <div class="txtbox">
-                        <p class="title">게임아카데미</p>
-                        <span class="subtxt">미래의 꿈 게임에 담다</span>
+                        new4
                     </div>
                 </li>
-                <li class="swiper-slide st5">
+                <li class="swiper-slide st4">
                     <div class="txtbox">
-                        <p class="title">어깨동무문고</p>
-                        <span class="subtxt">다름을 이해하는 모두의 동화</span>
+                        new5
                     </div>
                 </li>
             </ul>
         </div>
     </div>
 
+    <footer class="ft">
+        <div class="container">
+            <div class="ft_info">
+                <img src="./images/netmarble-logo-dark.png" alt="">
+                <p>서울특별시 구로구 디지털로26길 38,G-Tower넷마블<br>
+                Copyright © Netmarble Corp. All Rights Reserved.</p>
+                <div class="links">
+                    <a href="#">개인정보처리방침</a>
+                    <span>|</span>
+                    <a href="#">SNS 저작물 이용 동의서</a>
+                    <span>|</span>
+                    <a href="#">이메일 문의</a>
+                    <span>|</span>
+                    <a href="#">주무관청</a>
+                    <span>|</span>
+                    <a href="#">국세청</a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
     
 
     <script src="./js/jquery.min.js"></script>
@@ -183,6 +199,13 @@
             autoplay:{
                 delay: 4000,
             },
+        });
+
+        const swiper2 = new Swiper('.swiper2', {
+            // Optional parameters
+            direction: 'horizontal',
+            slidesPerView: 3,
+            spaceBetween: 30
         });
     </script>
 </body>

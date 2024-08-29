@@ -10,6 +10,7 @@ body{
 .container{
     width: 1280px;
     margin: 0 auto;
+    display: flex;
 }
 
 .clear:after{
@@ -52,6 +53,7 @@ body{
 .menuWrap h1 a{
     width: 165px; height: 35px;
     font-weight: 400;
+    color: none;
 }
 .menuWrap .gnb ul{
     display: flex;
@@ -224,6 +226,8 @@ body{
 .news{
     padding-top: 160px;
     padding-bottom: 160px;
+    flex-direction: column;
+    overflow: hidden;
 }
 .news .textWrap{
     line-height: 1.63;
@@ -234,4 +238,48 @@ body{
     line-height: 1.41;
     letter-spacing: -2px;
     padding-bottom: 20px;
+}
+
+.news .buttonWrap{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 50px 0 0;
+}
+.news .buttonWrap .button{
+    margin-left: 18px;
+    height: 38px;
+    padding: 0 24px;
+    border-radius: 19px;
+    font-size: 14px; font-weight: 500; line-height: 38px;
+    border: 1px solid #000;
+}
+
+.news .swiper2{
+    padding: 30px;
+}
+
+.news .swiper2 li{
+    border-style: solid;
+    height: 150px;
+}
+
+.ft{
+    background-color: #171717;
+}
+
+
+.ft .ft_info p{
+    color: white;
+    font-size: 11px;
+    line-height: 20px;
+    margin-top: 25px;
+}
+.ft .ft_info .links{
+    margin-top: 46px;
+    font-size: 12px;
+    line-height: 20px;
+    color: white;
+}
+.ft .ft_info .links a{
+    color: white;
 }
