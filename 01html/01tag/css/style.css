@@ -13,6 +13,11 @@ body{
     display: flex;
 }
 
+.winSize{
+    width: 100%;
+    min-width: 1280px;
+}
+
 .clear:after{
     content: '';
     width: 70px; height: 5px;
@@ -265,21 +270,57 @@ body{
 
 .ft{
     background-color: #171717;
+    padding: 64px 0;
 }
-
-
+.ft .ft_info{
+    position: relative;
+    width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.ft .ft_info img{
+    width: 152px; height: 32px;
+}
 .ft .ft_info p{
-    color: white;
+    color: rgba(255,255,255,.5);
     font-size: 11px;
     line-height: 20px;
-    margin-top: 25px;
+    margin-top: 26px;
+    display: block;
 }
 .ft .ft_info .links{
     margin-top: 46px;
     font-size: 12px;
     line-height: 20px;
-    color: white;
+    color: rgba(255,255,255,.5);
+}
+.ft .ft_info .links span{
+    margin: 0 10px;
 }
 .ft .ft_info .links a{
-    color: white;
+    color: rgba(255,255,255,.6);
+}
+.ft .ft_info .snsWrap{
+    position: absolute;
+    right: 0; bottom: 0;
+}
+.ft .ft_info .sns{
+    display: flex;
+    justify-content: flex-start;
+    color: rgba(255,255,255,.5);
+}
+.ft .ft_info .sns li{
+    /* width: 20px; height: 20px; */
+    margin-left: 24px;
+}
+.ft .ft_info .familySite{
+    color: rgba(255,255,255,.5);;
+    background-color: #080808;
+    position: absolute;
+    right: 0; top: 0;
+    width: 180px; height: 32px;
+}
+.ft .ft_info .familyWrap{
+    padding: 0 8px;
+    font-size: 11px;
 }
