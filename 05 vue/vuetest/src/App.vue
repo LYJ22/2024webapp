@@ -1,18 +1,26 @@
 <template>
    <!-- html 문서가 들어가는 부분-->
    <div class="container secWrap">
-      <img src="./assets/images/handsome.jpg" alt="" />
-      <div class="card">
-         <h3>{{ title }}</h3>
-         <p>⭐{{ num }}</p>
-         <p>대여 {{ won }}원</p>
+      <h3>HOT & NEW</h3>
+      <div class="cardWrap">
+         <div class="card" v-for="(item, i) in data" v-bind:key="i">
+            <!-- 속성에 넣을 때는 bind를 사용해야 한다. -->
+            <div class="imgWrap">
+               <img v-bind:src="`./images/${item.img}`" alt="" />
+            </div>
+            <div class="cardText">
+               <h3>{{ item.title }}</h3>
+               <p>⭐{{ item.num }}</p>
+               <p>대여 {{ item.won }}원</p>
+            </div>
+         </div>
       </div>
 
-      <ul>
-         <!-- v-for="item in array" -->
-         <!-- foreach문 처럼 파라미터가 item, index 순서다. -->
+      <!-- v-for="item in array" -->
+      <!-- foreach문 처럼 파라미터가 item, index 순서다. -->
+      <!-- <ul>
          <li v-for="(item, index) in todos" v-bind:key="index">{{ item }}</li>
-      </ul>
+      </ul> -->
 
       <!-- div여도 ul li여도 상관x
       <div v-for="(item,index) in todos" v-bind:key="index">{{ item }}</div> -->
@@ -31,6 +39,11 @@ export default {
          num: '8.6',
          won: '11,000',
          todos: ['서울', '부산', '대구'],
+         data: [
+            { title: '핸섬가이즈', num: '8.6', won: '11,000', img: 'handsome.jpg' },
+            { title: '탈주', num: '8.1', won: '11,000', img: 'movie.jpg' },
+            { title: '하이재킹', num: '8.7', won: '19,000', img: 'plane.jpg' },
+         ],
       };
    },
 };
@@ -43,5 +56,31 @@ export default {
 @import './assets/css/style.scss';
 .secWrap {
    padding: 5px 16px;
+}
+//sass 네스팅 문법
+.cardWrap {
+   display: flex;
+   gap: 10px;
+   .card {
+      width: 212px;
+
+      .imgWrap {
+         width: 100%;
+         overflow: hidden;
+         border-radius: 5px;
+
+         img {
+            width: 100%;
+            display: block;
+            transition: 0.3s;
+         }
+         &:hover img {
+            transform: scale(1.05);
+         }
+      }
+      .cardText {
+         padding: 5px;
+      }
+   }
 }
 </style>
