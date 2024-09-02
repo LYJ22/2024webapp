@@ -9,6 +9,9 @@
     --shadow-1:rgba(0,0,0,0.2);
 }
 
+ul,li{list-style: none; margin: 0; padding: 0;}
+a:link,a:visited{text-decoration: none; color: black;}
+
 .testWrap{
     background-color: var(--primary-color-1);
     box-shadow: 0 10px 10px var(--shadow-1);
@@ -75,8 +78,33 @@
 
 */
 
+/* 
+1. font 선정
+h2 60px, h3 32px
+title 18 bold
+basic 14~15
+button 10
+
+2. color
+
+3. layout
+html div 태그 구분
+*/
+
 
 /* customer */
 .customer .item{
     background-color: skyblue;
+}
+
+/* online */
+.online{
+    background: url(../images/images2/contact-cover.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* footer */
+.footer{
+    background-color: var(--primary-color-2);
 }

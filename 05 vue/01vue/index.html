@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">{{message}}</div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        // document.getElementById("app").innerHTML = "test"; javascript방식
+        // $("#id").html("test") jQuery 방식
+
+        const{createApp, ref} = Vue;
+
+        createApp({
+            setup(){
+                const message = ref("hello")
+                return {message}
+            }
+        }).mount("#app")
+    </script>
+</body>
+</html>
