@@ -1,0 +1,58 @@
+const mdata = [
+   {
+      title: '핸섬가이즈',
+      num: '8.6',
+      won: '11,000',
+      img: 'handsome.jpg',
+      like: 0,
+      hoticon: true,
+      detail: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, ea.',
+   },
+   {
+      title: '탈주',
+      num: '8.1',
+      won: '11,000',
+      img: 'movie.jpg',
+      like: 0,
+      hoticon: false,
+      detail: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, ea.',
+   },
+   {
+      title: '하이재킹',
+      num: '8.7',
+      won: '19,000',
+      img: 'plane.jpg',
+      like: 0,
+      hoticon: true,
+      detail: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, ea.',
+   },
+   {
+      title: '핸섬가이즈',
+      num: '8.6',
+      won: '11,000',
+      img: 'handsome.jpg',
+      like: 0,
+      hoticon: false,
+      detail: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, ea.',
+   },
+   {
+      title: '탈주',
+      num: '8.1',
+      won: '11,000',
+      img: 'movie.jpg',
+      like: 0,
+      hoticon: false,
+      detail: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, ea.',
+   },
+   {
+      title: '하이재킹',
+      num: '8.7',
+      won: '19,000',
+      img: 'plane.jpg',
+      like: 0,
+      hoticon: false,
+      detail: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, ea.',
+   },
+];
+
+export default mdata;

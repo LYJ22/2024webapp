@@ -1,0 +1,63 @@
+<template>
+   <div class="conWrap mb10">
+      <div class="container menu">
+         <!-- a.on:after 때문에 밑줄 있음 -->
+         <a href="#" class="on">영화</a>
+         <a href="#">방송</a>
+         <a href="#">랭킹</a>
+         <a href="#">무료</a>
+         <a href="#">이벤트</a>
+         <a href="#">멤버십</a>
+      </div>
+
+      <div class="container search">
+         <a href="#">MY</a>
+         <a href="#">카테고리</a>
+         <input type="text" />
+      </div>
+   </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style lang="scss" scoped>
+.conWrap {
+   width: 100%;
+   //    background-color: skyblue;
+   border-bottom: 1px solid #ddd;
+   padding: 0px 32px;
+   display: flex;
+   justify-content: space-between;
+
+   .menu {
+      display: flex;
+      a {
+         display: block;
+         margin-right: 5px;
+         font-weight: bold;
+         position: relative;
+         padding: 16px 0;
+         padding-right: 40px;
+      }
+      @media screen and (max-width: 560px) {
+         a {
+            padding-right: 15px;
+         }
+      }
+
+      a.on:after,
+      a:hover:after {
+         content: '';
+         //  display: block;
+         position: absolute;
+         width: 50px;
+         height: 5px;
+         bottom: -3px;
+         left: 0;
+         background-color: rgb(45, 73, 3);
+      }
+   }
+}
+</style>

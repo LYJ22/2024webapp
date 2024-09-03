@@ -50,7 +50,7 @@ export default {
 </script>
 
 <!-- css, 여기서 화면에 뿌려준다? -->
-<!-- scss를 sass형태로 바꿔서 사용한다?? -->
+<!-- scss형태로 바꿔서 사용한다?? -->
 <style lang="scss" scoped>
 //@는 src를 가르킨다.
 @import './assets/css/style.scss';
