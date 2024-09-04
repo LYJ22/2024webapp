@@ -1,10 +1,7 @@
 <template>
    <TitleView />
    <NavbarView />
-   <SearchBarView :data="data_temp" @searchMoive="searchMovie" />
-   <div class="container searchBtn">
-      <button @click="showAllView">전체보기</button>
-   </div>
+   <SearchBarView :data="data_temp" @searchMoive="searchMovie" @showAllView="showAllView" />
    <!-- 좋아요 주석처리 @increaseL="increaseLike"  -->
    <ContainerView :data="data_temp" @openM="modalOpen" />
    <!-- @closeModal은 자식에서 발생한 이벤트, closeM 함수 트리거 -->
@@ -65,15 +62,7 @@ export default {
 
 <style lang="scss">
 $radius: 5px;
-.searchBtn {
-   width: 1000px;
-   position: relative;
-   margin: 0 auto;
-   @media screen and (max-width: 790px) {
-      width: 100%;
-      padding: 0 16px;
-   }
-}
+
 .mb10 {
    margin-bottom: 10px !important;
 }

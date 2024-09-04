@@ -16,6 +16,9 @@
       <input type="search" @change="handelSearch" placeholder="검색어를 입력하세요" />
       <button>검색</button>
    </div>
+   <div class="searchBtn">
+      <button @click="$emit('showAllView')">전체보기</button>
+   </div>
 </template>
 
 <script>
@@ -52,14 +55,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.container {
-   width: 1000px;
-   position: relative;
-   margin: 0 auto;
-   @media screen and (max-width: 790px) {
-      width: 100%;
-      padding: 0 16px;
-   }
-}
-</style>
+<style lang="scss" scoped></style>

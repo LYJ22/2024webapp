@@ -9,18 +9,20 @@
          <a href="#">이벤트</a>
          <a href="#">멤버십</a>
       </div>
-
-      <div class="container search">
-         <a href="#">MY</a>
-         <span>|</span>
-         <a href="#">카테고리</a>
-         <input type="text" placeholder="작품,배우,감독명을 입력하세요." />
+      <div>
+         <SearchBarView />
       </div>
    </div>
 </template>
 
 <script>
-export default {};
+import SearchBarView from './SearchBarView.vue';
+
+export default {
+   components: {
+      SearchBarView: SearchBarView,
+   },
+};
 </script>
 
 <style lang="scss" scoped>
