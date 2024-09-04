@@ -1,10 +1,10 @@
 <template>
    <div class="modal" v-if="isModal">
       <div class="inner">
-         <h2 class="mb10">{{ data[num].title }}</h2>
+         <h2 class="mb10">{{ data[num - 1].title }}</h2>
          <hr />
          <p class="mb10">
-            {{ data[num].detail }}
+            {{ data[num - 1].detail }}
          </p>
          <!-- 자식에서 부모의 값을 변경하는 것은 좋지 않다. emit으로 신호만 전달 -->
          <!-- 컴포넌트 전 <button class="btn btn-primary" v-on:click="isModal = false">닫기</button> -->

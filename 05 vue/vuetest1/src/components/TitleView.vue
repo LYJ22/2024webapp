@@ -27,6 +27,13 @@ export default {
    justify-content: space-between;
    border-bottom: 1px solid #ddd;
    padding: 0 32px 16px;
+   width: 1050px;
+   margin: 0 auto;
+
+   @media screen and (max-width: 790px) {
+      width: 100%;
+      padding: 0 16px;
+   }
 
    .iconWrap {
       position: relative;

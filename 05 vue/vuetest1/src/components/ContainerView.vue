@@ -1,6 +1,7 @@
 <template>
    <div class="container">
       <h2 class="mb10">HOT & NEW</h2>
+      <p class="more">더보기</p>
       <div class="cardWrap">
          <div class="card" v-for="(item, i) in data" v-bind:key="i">
             <div class="imgWrap">
@@ -34,10 +35,17 @@ export default {
 <style lang="scss" scoped>
 .container {
    width: 1000px;
+   position: relative;
    margin: 0 auto;
    @media screen and (max-width: 790px) {
       width: 100%;
       padding: 0 16px;
+   }
+
+   .more {
+      position: absolute;
+      top: 10px;
+      right: 0;
    }
 
    img {

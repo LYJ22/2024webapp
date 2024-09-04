@@ -12,8 +12,9 @@
 
       <div class="container search">
          <a href="#">MY</a>
+         <span>|</span>
          <a href="#">카테고리</a>
-         <input type="text" />
+         <input type="text" placeholder="작품,배우,감독명을 입력하세요." />
       </div>
    </div>
 </template>
@@ -24,7 +25,13 @@ export default {};
 
 <style lang="scss" scoped>
 .conWrap {
-   width: 100%;
+   width: 1050px;
+   margin: 0 auto;
+
+   @media screen and (max-width: 790px) {
+      width: 100%;
+      padding: 0 16px;
+   }
    //    background-color: skyblue;
    border-bottom: 1px solid #ddd;
    padding: 0px 32px;
@@ -57,6 +64,22 @@ export default {};
          bottom: -3px;
          left: 0;
          background-color: rgb(45, 73, 3);
+      }
+   }
+   .search {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      a {
+         display: block;
+         margin: 0 10px;
+         padding: 16px 0;
+      }
+      input {
+         width: 250px;
+         height: 30px;
+         margin-left: 5px;
+         font-size: 13px;
       }
    }
 }
