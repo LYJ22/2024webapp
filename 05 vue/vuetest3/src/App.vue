@@ -14,6 +14,7 @@ import SearchbarView from "./components/SearchbarView.vue";
 import WeatherView from "./components/WeatherView.vue";
 import axios from "axios";
 
+// initial data
 const weatherData = ref({
   icon: "icon",
   temp: 0,
