@@ -1,13 +1,7 @@
 <template>
-  <nav class="navbar navbar-expand-md bg-body-tertiary fixed-top">
+  <nav class="navbar navbar-expand-md bg-body-tertiary">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img
-          src="../assets/images/logo_innogrid.svg"
-          alt=""
-          style="width: 120px"
-        />
-      </a>
+      <router-link class="navbar-brand" to="/">logo</router-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -22,18 +16,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <router-link to="/" class="nav-link">HOME</router-link>
+            <router-link class="nav-link" to="/">HOME</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/about" class="nav-link">ABOUT</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link
-              to="/portfolio"
-              class="nav-link"
-              :class="{ active: $route.name === 'PortfolioView' }"
-              >PORTFOLIO</router-link
-            >
+            <router-link class="nav-link" to="/user">USER</router-link>
           </li>
         </ul>
       </div>
