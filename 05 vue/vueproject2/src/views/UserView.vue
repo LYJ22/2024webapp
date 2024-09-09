@@ -7,7 +7,7 @@
       </div>
       <div class="col-md-6">
         <h3>User sign</h3>
-        <UserSignView :editData="editData" @editdone="editdone" />
+        <UserSignView />
       </div>
     </div>
 
@@ -16,6 +16,8 @@
         <MapView />
       </div>
     </div>
+
+    <ModalView :editData="editData" @editdone="editdone" />
   </div>
 </template>
 
@@ -25,28 +27,17 @@ import { useStore } from "vuex";
 import MapView from "../components/user/MapView.vue";
 import UserListView from "../components/user/UserListView.vue";
 import UserSignView from "../components/user/UserSignView.vue";
+import ModalView from "../components/user/ModalView.vue";
 
 const store = useStore();
 
-// const editData = ref({
-//   userid: null,
-//   password: null,
-//   username: null,
-//   addr: null,
-//   image: null,
-// });
-const editData = ref(false);
+const editData = ref(-1);
 
-const editUser = () => {
-  // editData.value.userid = store.state.userData[i].userid;
-  // editData.value.password = store.state.userData[i].password;
-  // editData.value.username = store.state.userData[i].username;
-  // editData.value.addr = store.state.userData[i].addr;
-  // editData.value.image = store.state.userData[i].image;
-  editData.value = true;
+const editUser = (i) => {
+  editData.value = i;
 };
 const editdone = () => {
-  editData.value = false;
+  editData.value = -1;
 };
 </script>
 

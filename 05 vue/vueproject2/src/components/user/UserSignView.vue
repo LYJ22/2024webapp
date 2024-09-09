@@ -27,6 +27,22 @@
         v-model="userData.username"
       />
     </div>
+    <div class="mb-3 d-flex gap-3">
+      <input
+        type="text"
+        id="latitude"
+        class="form-control"
+        placeholder="latitude"
+        v-model="userData.latitude"
+      />
+      <input
+        type="text"
+        id="longitude"
+        class="form-control"
+        placeholder="longitude"
+        v-model="userData.longitude"
+      />
+    </div>
     <div class="mb-3">
       <input
         type="text"
@@ -47,62 +63,33 @@
       <label class="input-group-text" for="fileform">Upload</label>
     </div>
 
-    <div v-if="editData === true">
-      <div class="btn btn-primary me-2">수정완료</div>
-      <div
-        class="btn btn-primary"
-        @click="
-          editEnd();
-          $emit('editdone');
-        "
-      >
-        수정취소
-      </div>
-    </div>
-    <div v-else class="btn btn-primary me-2" @click="addUser">회원가입</div>
-    {{ userData }}
-    {{ editData }}
+    <div class="btn btn-primary me-2" @click="addUser">회원가입</div>
   </div>
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
+import { ref } from "vue";
 import { useStore } from "vuex";
 
 const store = useStore();
-const props = defineProps({
-  editData: Boolean,
-});
-// watch(
-//   () => {
-//     return editData;
-//   },
-//   () => {
-//     fillForm();
-//   }
-// );
 
 const userData = ref({
   userid: null,
   password: null,
   username: null,
   addr: null,
+  latitude: null,
+  longitude: null,
   image: null,
 });
-
-// const fillForm = () => {
-//   document.getElementById("userid").value(store.state.editData.userid);
-//   document.getElementById("userpassword").value(store.state.editData.password);
-//   document.getElementById("username").value(store.state.editData.username);
-//   document.getElementById("addr").value(store.state.editData.addr);
-//   document.getElementById("fileform").value(store.state.editData.image);
-// };
 
 const clearform = () => {
   userData.value.userid = null;
   userData.value.password = null;
   userData.value.username = null;
   userData.value.addr = null;
+  userData.value.latitude = null;
+  userData.value.longitude = null;
   userData.value.image = null;
 };
 
@@ -112,6 +99,8 @@ const addUser = () => {
     password: userData.value.password,
     username: userData.value.username,
     addr: userData.value.addr,
+    latitude: userData.value.latitude,
+    longitude: userData.value.longitude,
     image: userData.value.image,
   };
   store.commit("addUser", uData);
@@ -124,10 +113,6 @@ const handleImage = (e) => {
   if (file) {
     userData.value.image = URL.createObjectURL(file);
   }
-};
-
-const editEnd = () => {
-  alert("수정이 취소 됐습니다.");
 };
 </script>
 

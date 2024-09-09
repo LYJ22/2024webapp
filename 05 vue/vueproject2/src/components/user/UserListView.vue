@@ -1,5 +1,4 @@
 <template>
-  {{ $store.state.userData }}
   <div
     v-for="(item, i) in $store.state.userData"
     v-bind:key="i"
@@ -13,13 +12,17 @@
         <h5 class="mb-0">{{ item.userid }}</h5>
         <p class="mb-0">{{ item.username }}</p>
       </div>
+      <div>
+        <p class="mb-0">경도: {{ item.latitude }}</p>
+        <p class="mb-0">위도: {{ item.longitude }}</p>
+      </div>
     </div>
-    <div>
+    <div class="d-flex flex-column gap-2">
       <div
-        class="btn btn-primary mx-3"
+        class="btn btn-primary"
         @click="
           editUser(i);
-          $emit('editUser');
+          $emit('editUser', i);
         "
       >
         수정
@@ -35,24 +38,12 @@ import { ref } from "vue";
 import { useStore } from "vuex";
 
 const store = useStore();
-// const editData = ref({
-//   userid: null,
-//   password: null,
-//   username: null,
-//   addr: null,
-//   image: null,
-// });
 
 const deleteUser = (i) => {
   store.commit("deleteUser", i);
 };
 
 const editUser = function (i) {
-  // editData.value.userid = store.state.userData[i].userid;
-  // editData.value.password = store.state.userData[i].password;
-  // editData.value.username = store.state.userData[i].username;
-  // editData.value.addr = store.state.userData[i].addr;
-  // editData.value.image = store.state.userData[i].image;
   store.commit("addEditUser", i);
 };
 </script>
