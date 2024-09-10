@@ -12,3 +12,42 @@ body {
   margin: 0 auto;
   background-color: skyblue;
 }
+
+.btn {
+  width: 100px;
+  padding: 10px;
+  background-color: skyblue;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: #fff;
+}
+.test-btn {
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn.btn-primary {
+  background: blue;
+}
+
+.btn.btn-info {
+  background: green;
+}
+.test-btn.btn-info {
+  background: pink;
+}
+.test-btn.btn-warn {
+  background: red;
+}
+
+.d-none {
+  display: none;
+}
