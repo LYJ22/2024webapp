@@ -51,6 +51,8 @@ function App() {
         modal
       </button>
 
+      {/* shop.map(function(){}) or shop.map(()=>{})*/}
+      {/* 곧바로 return하는 경우 중괄호 생략가능. shop.map(i=>item) */}
       {shop.map((item, index) => {
         return (
           <>
@@ -78,6 +80,7 @@ function App() {
       >
         제목 바꾸기
       </button>
+      {/* if문을 사용하면 더 복잡해진다. 삼항 연산자 지향 */}
       {modal === true ? <Modal title={title} image="test1" /> : null}
       {modal === true ? <Modal2 title="안녕히 가세요" /> : null}
     </>
