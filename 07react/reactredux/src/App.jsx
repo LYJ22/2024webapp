@@ -3,57 +3,96 @@ import { Provider, useDispatch, useSelector } from "react-redux";
 import { createStore } from "redux";
 
 const initalData = {
-  value: 10,
-  title: "HBD",
+  cart: [],
 };
 
 const reducer = (state = initalData, action) => {
   console.log(action);
-  if (action.type == "up") {
-    return { ...state, value: state.value + action.payload };
+  switch (action.type) {
+    case "add_Cart":
+      return { ...state, cart: [...state.cart, action.payload] };
+    case "remove_Cart":
+      return {
+        ...state,
+        cart: state.cart.filter((item) => item.id !== action.payload),
+      };
+    default:
+      return state;
   }
-  if (action.type == "down") {
-    return { ...state, value: state.value - action.payload };
-  }
-  return state;
 };
 
-// 괄호 안에 state 값. 가로선이 있지만 사용은 가능
 const store = createStore(reducer);
 
 function App() {
   return (
     <Provider store={store}>
-      <div>App</div>
-      <Counter />
+      <div>shop</div>
+      <hr />
+      <ProductList />
+      <hr />
+      <Cart />
     </Provider>
   );
 }
 
-function Counter() {
-  // 위아래 똑같은 동작. {}안에 한줄인 경우에 가능
-  // const counterValue = useSelector((state)=>{return state.value})
-  const counterValue = useSelector((state) => state.value);
-  const titleValue = useSelector((state) => state.title);
+const products = [
+  { id: 1, name: "product1" },
+  { id: 2, name: "product2" },
+  { id: 3, name: "product3" },
+  { id: 4, name: "product4" },
+];
+
+function ProductList() {
   const dispatch = useDispatch();
+  function addCart(item) {
+    dispatch({ type: "add_Cart", payload: item });
+  }
 
   return (
     <>
-      {counterValue} / {titleValue}
-      <button
-        onClick={() => {
-          dispatch({ type: "up", payload: 1 });
-        }}
-      >
-        클릭
-      </button>
-      <button
-        onClick={() => {
-          dispatch({ type: "down", payload: 1 });
-        }}
-      >
-        다운
-      </button>
+      <div>product</div>
+      {products.map((item, i) => {
+        return (
+          <div key={i}>
+            {item.id} / {item.name}
+            <button
+              onClick={() => {
+                return addCart(item);
+              }}
+            >
+              장바구니 추가
+            </button>
+          </div>
+        );
+      })}
+    </>
+  );
+}
+
+function Cart() {
+  const cartItems = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const removeCart = (item) => {
+    dispatch({ type: "remove_Cart", payload: item });
+  };
+
+  return (
+    <>
+      <div>Cart</div>
+      {cartItems.map((items, i) => {
+        return (
+          <div key={i}>
+            {items.id} / {items.name}
+            <button
+              onClick={() => {
+                removeCart(items.id);
+              }}
+            >
+              장바구니 제거
+            </button>
+          </div>
+        );
+      })}
     </>
   );
 }
