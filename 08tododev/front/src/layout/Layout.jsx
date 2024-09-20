@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 function Layout({ children }) {
   return (
     <>
-      <nav className="bg-blue-200">
+      <nav className="bg-blue-200 px-4">
         <div className="container mx-auto flex justify-between py-4">
           <h1>logo</h1>
-          <ul className="flex">
+          <ul className="flex  gap-3">
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -20,9 +20,9 @@ function Layout({ children }) {
           </ul>
         </div>
       </nav>
-      <div className="container mx-auto py-4">{children}</div>
+      <div className="container mx-auto px-4 py-4">{children}</div>
       <footer className="bg-gray-400">
-        <div className="container mx-auto py-4">푸터영역</div>
+        <div className="container mx-auto px-4 py-4">푸터영역</div>
       </footer>
     </>
   );
