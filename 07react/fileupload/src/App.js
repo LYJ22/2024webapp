@@ -3,24 +3,32 @@ import { getFileList } from "./api/apiFile";
 import "react-toastify/dist/ReactToastify.css";
 import { Bounce, ToastContainer } from "react-toastify";
 import ImageList from "./components/ImageList";
+import UploadFile from "./components/UploadFile";
+import "./App.css";
 
 function App() {
   const [imgData, setImgData] = useState([]);
+  const [imgUpload, setImgUpload] = useState(false);
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [imgUpload]);
 
-  const fetchData = () => {
-    const updateImageList = getFileList();
+  const fetchData = async () => {
+    const updateImageList = await getFileList();
     setImgData(updateImageList);
+  };
+
+  const handleImageUpload = () => {
+    setImgUpload(!imgUpload);
   };
 
   return (
     <div className="App">
       <h2>사진첩</h2>
+      <UploadFile handleImageUpload={handleImageUpload} />
       <ImageList imgData={imgData} />
       <ToastContainer
-        position="top-right"
+        position="bottom-center"
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}
@@ -30,7 +38,6 @@ function App() {
         draggable
         pauseOnHover
         theme="light"
-        transition={Bounce}
       />
     </div>
   );

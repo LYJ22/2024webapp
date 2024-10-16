@@ -9,7 +9,7 @@ const axiosInstance = axios.create({
   },
 });
 
-const postFile = async (data) => {
+export const postFile = async (data) => {
   try {
     const response = await axiosInstance.post("/file", data, {
       headers: {

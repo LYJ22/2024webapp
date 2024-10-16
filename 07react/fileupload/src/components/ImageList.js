@@ -2,13 +2,14 @@ import React from "react";
 
 function ImageList({ imgData }) {
   return (
-    <div>
+    <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
       {imgData.length > 0 ? (
         imgData.map((item, i) => {
           return (
             <div key={i}>
               <img
                 src={`${process.env.REACT_APP_DEV_HOST}/file/${item.id}`}
+                style={{ width: "200px" }}
                 alt=""
               />
             </div>
