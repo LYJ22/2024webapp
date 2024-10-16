@@ -26,7 +26,7 @@ const useCustomMove = () => {
     let queryStr = "";
     if (pageParam) {
       const pageNum = getNum(pageParam.page, 1);
-      const sizeNum = getNum(pageParam.size, 1);
+      const sizeNum = getNum(pageParam.size, 10);
       queryStr = createSearchParams({
         page: pageNum,
         size: sizeNum,
@@ -50,7 +50,28 @@ const useCustomMove = () => {
     });
   };
 
-  return { page, size, moveToList, moveToRead, refresh };
+  const moveToWrite = () => {
+    navigate({
+      pathname: `../add`,
+    });
+  };
+
+  const moveToModi = (num) => {
+    navigate({
+      pathname: `../modi/${num}`,
+      search: queryDefault,
+    });
+  };
+
+  return {
+    page,
+    size,
+    moveToList,
+    moveToRead,
+    moveToModi,
+    moveToWrite,
+    refresh,
+  };
 };
 
 export default useCustomMove;

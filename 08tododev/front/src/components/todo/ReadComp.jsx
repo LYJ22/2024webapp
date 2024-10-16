@@ -13,10 +13,11 @@ const initState = {
 function ReadComp({ tno }) {
   const [todo, setTodo] = useState(initState);
 
-  const { moveToList } = useCustomMove();
+  const { moveToList, moveToModi } = useCustomMove();
 
   useEffect(() => {
     getOne(tno).then((res) => {
+      console.log(res);
       setTodo(res);
     });
   }, [tno]);
@@ -36,7 +37,11 @@ function ReadComp({ tno }) {
         >
           리스트
         </button>
-        <button className="bg-blue-500 rounded py-2 px-4 text-white">
+
+        <button
+          className="bg-blue-500 rounded py-2 px-4 text-white"
+          onClick={() => moveToModi(tno)}
+        >
           수정
         </button>
       </div>
@@ -44,11 +49,11 @@ function ReadComp({ tno }) {
   );
 }
 
-const makeDiv = (title, value) => {
+const makeDiv = (title, value) => (
   <div className="flex">
     <div className="w-3/12 font-extrabold">{title}</div>
     <div className="w-9/12">{value}</div>
-  </div>;
-};
+  </div>
+);
 
 export default ReadComp;

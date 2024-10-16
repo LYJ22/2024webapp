@@ -3,13 +3,12 @@ import ReadComp from "../../components/todo/ReadComp";
 import { useParams } from "react-router-dom";
 
 function ReadPage() {
-  const num = useParams();
+  const { tno } = useParams();
 
   //   useParams는 주소에 있는 param 읽어온 것. ? 뒤의 수식은 query문
   return (
     <div>
-      {num.tno}
-      <ReadComp tno={num.tno} />
+      <ReadComp tno={tno} />
     </div>
   );
 }
