@@ -5,6 +5,7 @@ import memberRouter from "./memberRouter";
 const loading = <div className="bg-red-500">loading...</div>;
 const Main = lazy(() => import("../pages/MainComp"));
 const About = lazy(() => import("../pages/AboutComp"));
+const Test = lazy(() => import("../pages/TestPage"));
 
 const root = createBrowserRouter([
   {
@@ -26,6 +27,14 @@ const root = createBrowserRouter([
   {
     path: "/member",
     children: memberRouter(),
+  },
+  {
+    path: "/test",
+    element: (
+      <Suspense fallback={loading}>
+        <Test />
+      </Suspense>
+    ),
   },
 ]);
 
